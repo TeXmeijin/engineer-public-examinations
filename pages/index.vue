@@ -1,36 +1,26 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        engineer-public-examinations
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <section>
+    <h1>問題</h1>
+    <div v-for="content in contents" :key="content.slug">
+      {{ content }}
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
+import { IContentDocument } from '@nuxt/content/types/content'
 import Vue from 'vue'
 
-export default Vue.extend({})
+export default Vue.extend({
+  data () {
+    return {
+      contents: [] as IContentDocument[] | IContentDocument
+    }
+  },
+  async mounted () {
+    this.contents = await this.$content('exam/web/fundamental').fetch()
+  }
+})
 </script>
 
 <style>
@@ -49,16 +39,8 @@ export default Vue.extend({})
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
