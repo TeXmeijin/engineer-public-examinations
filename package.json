@@ -24,7 +24,7 @@
   "dependencies": {
     "@nuxt/content": "^1.9.0",
     "@nuxt/typescript-runtime": "^2.0.0",
-    "@nuxtjs/composition-api": "^0.16.4",
+    "@nuxtjs/composition-api": "^0.17.0",
     "core-js": "^3.6.5",
     "crypto-random-string": "^3.3.0",
     "nuxt": "^2.14.11"
@@ -37,7 +37,7 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/stylelint-module": "^4.0.0",
     "@nuxtjs/tailwindcss": "^3.1.0",
-    "@vue/test-utils": "^1.1.0",
+    "@vue/test-utils": "^1.1.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.0",
